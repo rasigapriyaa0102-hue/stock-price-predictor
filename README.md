@@ -51,7 +51,11 @@ stock-price-predictor/
 ├── train_models.py
 ├── requirements.txt
 │── screenshots
-│ ├── output.png
+│ ├── home_page.png
+│ ├── predict_page.png
+│ ├── result_page.png
+│ ├── about_page.png
+│ ├── contact_page.png
 ├── models/
 │ ├── lstm.h5
 │ ├── gru.h5
@@ -82,7 +86,12 @@ yaml
 ### Prediction Result Page
 Below screenshot shows the final stock price prediction result with model comparison and suggestion (BUY / SELL / AVOID).
 
-![Prediction Output](screenshots/output.png)
+![Home Page](screenshots/home_page.png)
+![Prediction Page](screenshots/predict_page.png)
+![Result Page](screenshots/result_page.png)
+![About Page](screenshots/about_page.png)
+![contact Page](screenshots/contact_page.png)
+
 
 
 ## ⚙️ Installation & Setup
