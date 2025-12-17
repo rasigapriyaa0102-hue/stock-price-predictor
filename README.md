@@ -44,6 +44,7 @@ The application fetches **real-time stock market data** using Yahoo Finance and 
 
 ## 📂 Project Structure
 
+
 stock-price-predictor/
 │
 ├── app.py
@@ -74,6 +75,13 @@ stock-price-predictor/
 └── README.md
 
 yaml
+
+## 📸 Output / Results
+
+### Prediction Result Page
+Below screenshot shows the final stock price prediction result with model comparison and suggestion (BUY / SELL / AVOID).
+
+![Prediction Output](screenshots/output.png)
 
 
 ## ⚙️ Installation & Setup
