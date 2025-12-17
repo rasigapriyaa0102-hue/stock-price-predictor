@@ -49,7 +49,8 @@ stock-price-predictor/
 ├── app.py
 ├── train_models.py
 ├── requirements.txt
-│
+│── screenshots
+│ ├── output.png
 ├── models/
 │ ├── lstm.h5
 │ ├── gru.h5
@@ -74,6 +75,13 @@ stock-price-predictor/
 └── README.md
 
 yaml
+
+## 📸 Output / Results
+
+### Prediction Result Page
+Below screenshot shows the final stock price prediction result with model comparison and suggestion (BUY / SELL / AVOID).
+
+![Prediction Output](screenshots/output.png)
 
 
 ## ⚙️ Installation & Setup
