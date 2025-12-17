@@ -50,7 +50,8 @@ stock-price-predictor/
 ├── app.py
 ├── train_models.py
 ├── requirements.txt
-│
+│── screenshots
+│ ├── output.png
 ├── models/
 │ ├── lstm.h5
 │ ├── gru.h5
