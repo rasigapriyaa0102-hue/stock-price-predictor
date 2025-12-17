@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo.png') }}">
+  <title>{{ title if title else 'Stock Predictor' }}
+    
+  </title>
+   <!-- Browser Tab Icon -->
+  
+
+
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    body {
+      background: linear-gradient(-45deg, #0f172a, #065f46, #0891b2, #0f172a);
+      background-size: 400% 400%;
+      animation: gradientShift 8s ease infinite;
+      font-family: 'Poppins', sans-serif;
+      color: black;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    nav {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 255, 200, 0.3);
+      box-shadow: 0 0 20px rgba(0, 255, 150, 0.3);
+    }
+
+    nav a {
+      color: #e0f2f1;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #00ffc3;
+      text-shadow: 0 0 10px #00ffc3, 0 0 20px #00ffc3;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(0, 255, 200, 0.2);
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: auto;
+      color: #a7f3d0;
+      box-shadow: 0 -5px 15px rgba(0, 255, 180, 0.15);
+    }
+
+    .btn-glow {
+      background: linear-gradient(90deg, #00ffc3, #00b4d8);
+      color: #0f172a;
+      font-weight: bold;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #00ffc3;
+      transition: all 0.3s ease;
+    }
+
+    .btn-glow:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 35px #00fff2, 0 0 50px #00e0c0;
+    }
+
+    h1, h2, h3 {
+      text-shadow: 0 0 20px rgba(0, 255, 200, 0.6);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center px-8 py-3">
+    
+    <h1 class="text-xl font-bold text-cyan-300">🚀 Stock Predictor</h1>
+    <div>
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('prediction') }}">Predict</a>
+      <a href="{{ url_for('about') }}">About</a>
+      <a href="{{ url_for('contact') }}">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Page content -->
+  <main class="flex-grow">
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <small>© {{ datetime.utcnow().year }} Stock Predictor • Powered by yfinance,TwelveData & AI models</small>
+  </footer>
+</body>
+</html>

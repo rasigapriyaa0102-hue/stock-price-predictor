@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="flex flex-col items-center justify-center flex-grow px-6 py-16">
+
+  <div class="glass-card w-full max-w-3xl p-10 text-center">
+    <h2 class="text-3xl font-bold text-cyan-300 mb-4">
+      📈 Prediction Result — {{ stock_name }}
+    </h2>
+
+    <p class="text-gray-300 mb-8">
+      Best model based on lowest MAPE: 
+      <span class="text-green-400 font-semibold">{{ best_model }}</span>
+    </p>
+
+    <!-- Suggestion -->
+    <div class="mb-8">
+      {% if suggestion == "Buy" %}
+        <p class="text-3xl font-bold text-green-400">✅ Suggestion: BUY</p>
+      {% elif suggestion == "Sell" %}
+        <p class="text-3xl font-bold text-red-400">⚠️ Suggestion: SELL</p>
+      {% else %}
+        <p class="text-3xl font-bold text-yellow-400">🤔 Suggestion: AVOID</p>
+      {% endif %}
+    </div>
+
+    <!-- Chart Placeholder -->
+    <div class="mt-6 bg-gray-800/40 p-6 rounded-xl">
+      <canvas id="resultChart" width="400" height="200"></canvas>
+    </div>
+
+    <a href="{{ url_for('prediction') }}" 
+       class="btn-glow mt-8 inline-block text-lg px-8 py-3 rounded-lg font-semibold">
+       🔁 Predict Another Stock
+    </a>
+  </div>
+</main>
+
+<!-- Chart Script -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const ctx = document.getElementById('resultChart').getContext('2d');
+const chartData = {{ chart_data | safe }};
+
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: chartData.dates,
+    datasets: [{
+      label: 'Predicted Price',
+      data: chartData.predicted,
+      borderColor: '#06b6d4',
+      borderWidth: 3,
+      tension: 0.3
+    }, {
+      label: 'Actual Price',
+      data: chartData.actual,
+      borderColor: '#22c55e',
+      borderWidth: 2,
+      borderDash: [5, 5],
+      tension: 0.3
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { labels: { color: 'white' } },
+    },
+    scales: {
+      x: { ticks: { color: 'white' } },
+      y: { ticks: { color: 'white' } }
+    }
+  }
+});
+
+
+<!-- Auto-refresh live prediction -->
+
+async function refreshLivePrediction() {
+  try {
+    const res = await fetch(`/predict_live/{{ stock_name }}`);
+    const data = await res.json();
+
+    if (data.error) {
+      console.warn(data.error);
+      return;
+    }
+
+    // Update suggestion text
+    const suggestionDiv = document.querySelector('.mb-8 p');
+    if (data.suggestion === "Buy") {
+      suggestionDiv.textContent = "✅ Suggestion: BUY";
+      suggestionDiv.className = "text-3xl font-bold text-green-400";
+    } else if (data.suggestion === "Sell") {
+      suggestionDiv.textContent = "⚠️ Suggestion: SELL";
+      suggestionDiv.className = "text-3xl font-bold text-red-400";
+    } else {
+      suggestionDiv.textContent = "🤔 Suggestion: AVOID";
+      suggestionDiv.className = "text-3xl font-bold text-yellow-400";
+    }
+
+    // Optionally update chart title or log new values
+    console.log("Updated live:", data);
+  } catch (err) {
+    console.error("Live update failed:", err);
+  }
+}
+
+// Refresh every 60 seconds
+setInterval(refreshLivePrediction, 60000);
+
+
+</script>
+{% endblock %}

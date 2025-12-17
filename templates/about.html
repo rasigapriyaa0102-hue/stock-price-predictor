@@ -1,0 +1,35 @@
+<!-- templates/about.html -->
+{% extends "base.html" %}
+{% block content %}
+
+<!-- About Section -->
+<section style="padding: 40px 20px; max-width: 800px; margin: auto; background-color: rgba(255,255,255,0.85); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);margin-top: 40px;">
+  <h2 style="font-size: 2rem; font-weight: 700; color: #2c3e50; margin-bottom: 20px; text-align: center;">🧠 About Stock Predictor</h2>
+  <p style="font-size: 1.1rem; line-height: 1.6; color: #34495e; text-align: justify;">
+    <strong>Stock Predictor</strong> is your intelligent companion for short-term stock trend forecasting. 
+    Powered by advanced deep learning models—<em>LSTM</em> and <em>GRU</em>—our platform transforms complex market data into clear, actionable insights.
+  </p>
+  <ul style="font-size: 1rem; line-height: 1.8; color: #2d3436; padding-left: 20px;">
+    <li style="margin-bottom: 8px;">📈 Real-time predictions based on historical trends</li>
+    <li style="margin-bottom: 8px;">🔍 Confidence metrics to guide your decisions</li>
+    <li style="margin-bottom: 8px;">🔗 Seamless data integration via <code>TwelveData</code></li>
+  </ul>
+</section>
+
+<!-- How It Works Section -->
+<section style="padding: 40px 20px; max-width: 800px; margin: 40px auto; background-color: rgba(255,255,255,0.85); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  <h2 style="font-size: 2rem; font-weight: 700; color: #2c3e50; margin-bottom: 20px; text-align: center;">⚙️ How It Works</h2>
+  <ol style="font-size: 1rem; line-height: 1.8; color: #2d3436; padding-left: 20px;">
+    <li style="margin-bottom: 10px;"><strong>Fetch Data:</strong> Retrieve historical stock data using <code>yfinance</code></li>
+    <li style="margin-bottom: 10px;"><strong>Preprocess:</strong> Clean and convert data into time-series sequences</li>
+    <li style="margin-bottom: 10px;"><strong>Evaluate Models:</strong> Apply LSTM and GRU on recent data windows</li>
+    <li style="margin-bottom: 10px;"><strong>Score Accuracy:</strong> Use <abbr title="Mean Absolute Percentage Error">MAPE</abbr> to assess performance</li>
+    <li style="margin-bottom: 10px;"><strong>Select Best:</strong> Choose the most accurate model for prediction</li>
+    <li style="margin-bottom: 10px;"><strong>Display Result:</strong> Show forecast with confidence score in a user-friendly card</li>
+  </ol>
+</section>
+
+
+
+
+{% endblock %}

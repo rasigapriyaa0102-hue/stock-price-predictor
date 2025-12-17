@@ -1,0 +1,8 @@
+Flask==2.2.5
+pandas==2.1.2
+numpy==1.26.4
+yfinance==0.2.25
+scikit-learn==1.2.2
+plotly==5.16.0
+joblib==1.3.2
+tensorflow==2.13.0  # Only if you use saved Keras LSTM/GRU models

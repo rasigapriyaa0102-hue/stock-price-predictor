@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="flex flex-col items-center justify-center flex-grow text-center px-6 py-20">
+
+  <!-- Animated Heading -->
+  <h2 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-green-400 drop-shadow-2xl mb-6 animate-pulse">
+    Predict Smarter. Invest Wiser.
+  </h2>
+
+  <!-- Description -->
+  <p class="text-gray-200 mb-10 max-w-2xl text-lg leading-relaxed">
+    Leverage powerful AI models like 
+    <b class="text-cyan-300">LSTM</b>, 
+    <b class="text-green-300">GRU</b>, 
+    <b class="text-teal-300">Random Forest</b> & 
+    <b class="text-sky-300">XGBoost</b> for accurate stock trend forecasting.<br>
+    Simple. Interactive. Real-time insights powered by 
+    <span class="text-cyan-400 font-semibold">yfinance</span>.
+  </p>
+
+  <!-- Glowing Button -->
+  <a href="{{ url_for('prediction') }}" 
+     class="btn-glow text-lg px-10 py-4 rounded-xl font-semibold tracking-wide hover:scale-105 transition-transform duration-300">
+     🚀 Start Prediction
+  </a>
+
+  <!-- Floating Glow Accent -->
+  <div class="absolute top-20 left-10 w-32 h-32 bg-cyan-500 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+  <div class="absolute bottom-20 right-10 w-40 h-40 bg-green-400 rounded-full blur-3xl opacity-20 animate-ping"></div>
+
+</main>
+{% endblock %}

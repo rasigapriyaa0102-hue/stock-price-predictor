@@ -1,0 +1,14 @@
+<!-- templates/models.html -->
+{% extends "base.html" %}
+{% block content %}
+<section class="container mt-5">
+  <h2>Model Insights (Technical)</h2>
+  <p>Loaded models:</p>
+  <ul>
+    {% for m in models %}
+      <li>{{ m.name }}</li>
+    {% endfor %}
+  </ul>
+  <p>Use this page when demonstrating model performance to reviewers.</p>
+</section>
+{% endblock %}
