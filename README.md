@@ -1,26 +1,23 @@
-# 📈 Stock Price Prediction Web Application
+📈 Stock Price Prediction Web Application
 
-A full-stack **Stock Price Prediction Web App** built using **Flask**, **Machine Learning**, and **Deep Learning models (LSTM, GRU, XGBoost, SVR)**.  
-The application fetches **real-time stock market data** using Yahoo Finance and provides **Buy / Sell / Avoid** suggestions based on model predictions.
+A web-based stock price prediction system developed using machine learning and deep learning models.
+The application fetches real-time historical stock data, predicts future prices, evaluates model accuracy, and provides Buy/Sell/Avoid suggestions for learning and academic purposes.
 
 ---
 
 ## 🚀 Features
 
-- 📊 Real-time stock price data using **yfinance**
-- 🤖 Multiple prediction models:
-  - LSTM
-  - GRU
-  - XGBoost
-  - Support Vector Regression (SVR)
-- 🏆 Automatic **best model selection** using **lowest MAPE**
-- 💡 Trading suggestions:
-  - **Buy**
-  - **Sell**
-  - **Avoid**
-- 📉 Interactive chart (Actual vs Predicted prices)
-- 🌐 REST API endpoint for predictions
-- 🎨 Clean and responsive UI
+Real-time stock data fetching from Yahoo Finance
+
+Multiple prediction models for comparison
+
+Automatic best model selection using error metrics
+
+Buy / Sell / Avoid recommendation system
+
+REST API support for predictions
+
+Simple and user-friendly web interface
 
 ---
 
@@ -85,34 +82,40 @@ yaml
 
 ### Prediction Result Page
 Below screenshot shows the final stock price prediction result with model comparison and suggestion (BUY / SELL / AVOID).
-
+**Home page**
 ![Home Page](screenshots/home_page.png)
+**Prediction page**
 ![Prediction Page](screenshots/predict_page.png)
+**Result page**
 ![Result Page](screenshots/result_page.png)
+**About page**
 ![About Page](screenshots/about_page.png)
+**Contact page**
 ![contact Page](screenshots/contact_page.png)
 
 
 
 ## ⚙️ Installation & Setup
 
-### 1️⃣ Clone the repository
-```bash
+1️⃣ Clone the repository
+
 git clone https://github.com/your-username/stock-price-predictor.git
 cd stock-price-predictor
 
 2️⃣ Install dependencies
-bash
+
 pip install -r requirements.txt
 
 3️⃣ Run the application
-bash
+
 python app.py
 
 4️⃣ Open in browser
-cpp http://127.0.0.1:5000
 
-🔮 How Prediction Works
+http://127.0.0.1:5000
+
+
+🔮** How Prediction Works**
 
 User enters a stock symbol (AAPL, TSLA, RELIANCE, TCS, etc.)
 
@@ -128,6 +131,7 @@ Best model is selected automatically
 
 Final prediction & suggestion is displayed
 
+
 📊 Suggestion Logic
 
 Condition	Suggestion
@@ -135,24 +139,9 @@ Price ↑ and Confidence > 50%	Buy
 Price ↓ and Confidence > 50%	Sell
 Small change / Low confidence	Avoid
 
-🔗 API Endpoint
-Get prediction as JSON
-bash
 
-GET /api/prediction/<STOCK_SYMBOL>
-Example:
+📌** Future Enhancements**
 
-ruby
-
-http://127.0.0.1:5000/api/prediction/AAPL
-⚠️ Limitations
-Yahoo Finance rate limits may occur
-
-Predictions are not financial advice
-
-Accuracy depends on market volatility
-
-📌 Future Enhancements
 Live auto-refresh every 60 seconds
 
 Candlestick charts
@@ -163,13 +152,10 @@ User authentication & portfolio tracking
 
 Deployment on cloud (AWS / Render)
 
-📜 Disclaimer
+📜** Disclaimer**
 This project is built for academic and learning purposes only.
 Do not use it for real financial trading decisions.
 
-👩‍💻 Author
-Rasigapriya A
-BE – Computer Science Engineering
-Stock Price Prediction Mini Project
 
-⭐ If you like this project, give it a star on GitHub!
+
+
