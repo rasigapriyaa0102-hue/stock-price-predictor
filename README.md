@@ -82,14 +82,19 @@ yaml
 
 ### Prediction Result Page
 Below screenshot shows the final stock price prediction result with model comparison and suggestion (BUY / SELL / AVOID).
+
 **Home page**
 ![Home Page](screenshots/home_page.png)
+
 **Prediction page**
 ![Prediction Page](screenshots/predict_page.png)
+
 **Result page**
 ![Result Page](screenshots/result_page.png)
+
 **About page**
 ![About Page](screenshots/about_page.png)
+
 **Contact page**
 ![contact Page](screenshots/contact_page.png)
 
@@ -115,7 +120,7 @@ python app.py
 http://127.0.0.1:5000
 
 
-🔮** How Prediction Works**
+🔮 How Prediction Works
 
 User enters a stock symbol (AAPL, TSLA, RELIANCE, TCS, etc.)
 
@@ -140,7 +145,7 @@ Price ↓ and Confidence > 50%	Sell
 Small change / Low confidence	Avoid
 
 
-📌** Future Enhancements**
+📌 Future Enhancements
 
 Live auto-refresh every 60 seconds
 
@@ -152,7 +157,8 @@ User authentication & portfolio tracking
 
 Deployment on cloud (AWS / Render)
 
-📜** Disclaimer**
+📜 Disclaimer
+
 This project is built for academic and learning purposes only.
 Do not use it for real financial trading decisions.
 
